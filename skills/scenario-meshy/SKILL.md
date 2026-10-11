@@ -40,7 +40,7 @@ Rigging and Animation are alternatives, not stages. Animation auto-rigs internal
 
 ## Worked example: photo to animated character
 
-1. `search` with `target="models"`, `query="meshy"`, `public=true`. Single-image route: `model_meshy-7-img23d` (a live hit at authoring time: re-discover each session).
+1. `search` with `target="models"`, `query="meshy"`, `public=true`. Single-image route: `model_meshy-7-img23d` (a live hit at authoring time: re-discover each session). `search` does not flag plan access, and several Meshy members, Animation and Rigging among them, sat above the entry plans at authoring time: before paying step 3, `recommend` with `capability="3d23d"` and the animation need, and if the Animation entry carries `requires_plan_upgrade`, surface the upgrade or stop at the static mesh, since step 5 would otherwise fail with 403 `ModelAccessRestrictedError` after step 3 was billed.
 2. `model_schema_get` with that id, then `upload_asset` the character photo (see the `scenario` skill).
 3. `model_run` with `dry_run=true` and `parameters={"image": ["asset_photo"], "poseMode": "t-pose", "texturePrompt": "worn leather armor, muted palette", "enablePbr": true}` for the estimate; then re-run with `wait=false` and `jobs_wait` with the job id, re-called with `pending_job_ids` on timeout, never a second `model_run`.
 4. `asset_display` the GLB; check silhouette and texture before spending further.
@@ -56,3 +56,4 @@ Rigging and Animation are alternatives, not stages. Animation auto-rigs internal
 - Rigging before Animation: Animation rigs by itself, so the chain wastes a job.
 - `targetPolycount` on Image to 3D or Text-to-3D with `shouldRemesh` off: it does not apply.
 - A bare string where the schema says array: one photo goes as `["asset_x"]`.
+- Pricing step 5 with a placeholder asset id: file ids resolve before plan access is checked, so the dry run returns 404 and proves neither price nor access.
