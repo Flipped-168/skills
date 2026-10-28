@@ -11,6 +11,18 @@
   <a href="https://skills.sh/scenario-labs/skills">
     <img alt="skills.sh" src="https://skills.sh/b/scenario-labs/skills" />
   </a>
+  <a href="https://github.com/scenario-labs/skills/releases">
+    <img alt="Latest release" src="https://img.shields.io/github/v/release/scenario-labs/skills" />
+  </a>
+  <a href="https://github.com/scenario-labs/skills/actions/workflows/ci.yml">
+    <img alt="CI" src="https://github.com/scenario-labs/skills/actions/workflows/ci.yml/badge.svg?branch=main" />
+  </a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/scenario-labs/skills">
+    <img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/scenario-labs/skills?label=openssf+scorecard&style=flat" />
+  </a>
+  <a href="LICENSE">
+    <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-blue" />
+  </a>
   <a href="https://mcp.scenario.com/docs">
     <img alt="MCP documentation" src="https://img.shields.io/badge/documentation-mcp-black.svg" />
   </a>
@@ -27,62 +39,38 @@
   <br />
 </div>
 
-Agent Skills that teach AI coding agents (Claude Code, Cursor, Codex, Copilot, and 70+ others) how to create production-ready content with [Scenario](https://scenario.com) through the [Scenario MCP server](https://mcp.scenario.com): images, video, audio, textures, skyboxes, 3D assets, and custom-trained models, for games, entertainment, and any creative vertical.
+Agent Skills that teach AI coding agents (Claude Code, Cursor, Codex, Copilot, and 70+ others) how
+to create production-ready content with [Scenario](https://scenario.com) through the
+[Scenario MCP server](https://mcp.scenario.com): images, video, audio, textures, skyboxes, 3D
+assets, and custom-trained models, for games, entertainment, and any creative vertical.
 
-The expert tools at the bottom of the list work differently: teams of skills that drive DCC (digital content creation) software and game engines installed on your machine (ZBrush, Blender, Maya, Unreal Engine, Unity, Godot), distilled from expert tutorials, conference talks, and official documentation. They need the application, not the Scenario MCP server, and each family folder's README records how it was built and how far it was verified.
+The expert tools at the bottom of the list work differently: teams of skills that drive DCC (digital
+content creation) software and game engines installed on your machine (ZBrush, Blender, Maya, Unreal
+Engine, Unity, Godot, Roblox Studio), distilled from expert tutorials, conference talks, and
+official documentation. They need the application, not the Scenario MCP server, and each family
+folder's README records how it was built and how far it was verified.
 
 Skills follow the [Agent Skills](https://agentskills.io) format.
 
 ## Install
 
-**Everything for Scenario.** All 71 Scenario skills, without the expert tools: the default for working through the Scenario MCP.
+**Everything for Scenario.** Every Scenario skill, without the expert tools: the default for working
+through the Scenario MCP.
 
 ```bash
 # Every Scenario skill, without the expert tools
-npx skills add scenario-labs/skills --skill scenario --skill scenario-inspiration --skill scenario-image --skill scenario-multi-reference --skill scenario-product-shots --skill scenario-brand-kit --skill scenario-image-editing --skill scenario-text-overlay --skill scenario-storyboards --skill scenario-game-assets --skill scenario-sprite-animation --skill scenario-side-view-game-kit --skill scenario-textures --skill scenario-skyboxes --skill scenario-3d --skill scenario-patina-retexture --skill scenario-orbit-views --skill scenario-walkable-room --skill scenario-video --skill scenario-video-editing --skill scenario-seedance-music-video --skill scenario-kinetic-music-video --skill scenario-chatgpt-pet-create --skill scenario-chatgpt-pet-update --skill scenario-seedance-storyboard --skill scenario-video-ads --skill scenario-ugc --skill scenario-fan-cam --skill scenario-audio --skill scenario-video-assembly --skill scenario-caption-studio --skill scenario-consistency --skill scenario-identity-library --skill scenario-model-training --skill scenario-asset-analysis --skill scenario-quality-gate --skill scenario-refine-loop --skill scenario-model-comparison --skill scenario-formats --skill scenario-workflows --skill scenario-workflow-authoring --skill scenario-moderation --skill scenario-report --skill scenario-team-admin --skill scenario-admin-analytics --skill scenario-gpt-image --skill scenario-mai-image --skill scenario-seedream --skill scenario-gemini-image --skill scenario-reve --skill scenario-ideogram --skill scenario-grok-imagine-image --skill scenario-luma-image --skill scenario-minimax-video --skill scenario-gemini-omni --skill scenario-grok-imagine-video --skill scenario-veo --skill scenario-seedance --skill scenario-kling --skill scenario-vidu --skill scenario-wan --skill scenario-runway --skill scenario-luma-video --skill scenario-minimax-music --skill scenario-elevenlabs --skill scenario-ace-step --skill scenario-sonilo --skill scenario-meshy --skill scenario-rodin --skill scenario-sparc3d --skill scenario-3d-worlds --skill scenario-ad-variants --skill scenario-thumbnails
+npx skills add scenario-labs/skills --skill scenario scenario-inspiration scenario-image scenario-multi-reference scenario-product-shots scenario-brand-kit scenario-image-editing scenario-text-overlay scenario-storyboards scenario-game-assets scenario-sprite-animation scenario-side-view-game-kit scenario-blender-2d-animation scenario-textures scenario-skyboxes scenario-3d scenario-video-to-motion scenario-blender scenario-patina-retexture scenario-orbit-views scenario-walkable-room scenario-video scenario-video-editing scenario-video-color-grade scenario-seedance-music-video scenario-kinetic-music-video scenario-chatgpt-pet-create scenario-chatgpt-pet-update scenario-seedance-storyboard scenario-seedance-drafts scenario-video-ads scenario-ugc scenario-fan-cam scenario-reel-recast scenario-audio scenario-video-assembly scenario-motion-loops scenario-caption-studio scenario-consistency scenario-identity-library scenario-model-training scenario-asset-analysis scenario-quality-gate scenario-refine-loop scenario-model-comparison scenario-formats scenario-workflows scenario-workflow-authoring scenario-moderation scenario-report scenario-team-admin scenario-admin-analytics scenario-gpt-image scenario-mai-image scenario-seedream scenario-gemini-image scenario-reve scenario-ideogram scenario-grok-imagine-image scenario-luma-image scenario-minimax-video scenario-gemini-omni scenario-grok-imagine-video scenario-veo scenario-seedance scenario-kling scenario-vidu scenario-wan scenario-runway scenario-luma-video scenario-minimax-music scenario-elevenlabs scenario-ace-step scenario-sonilo scenario-meshy scenario-rodin scenario-sparc3d scenario-3d-worlds scenario-ad-variants scenario-thumbnails
 ```
 
-**By role.** [INSTALL.md](INSTALL.md) groups the skills by job, from 2D artist to producer, with the outcomes each role gets and one command per role.
+**By role or goal.** [INSTALL.md](INSTALL.md) groups the skills by job, from 2D artist to producer,
+and by outcome, from game art to ChatGPT pets, with one command each.
 
-**By goal.** Each command installs the lead skills for one outcome plus the sibling skills they hand work to.
-
-**Game art and 3D** (22 skills). Sprites, tilesets, textures, skyboxes, 3D props, and walkable spaces in one consistent style.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-game-assets --skill scenario-sprite-animation --skill scenario-side-view-game-kit --skill scenario-textures --skill scenario-skyboxes --skill scenario-3d --skill scenario-image --skill scenario-patina-retexture --skill scenario-walkable-room --skill scenario-video --skill scenario-consistency --skill scenario-model-training --skill scenario-refine-loop --skill scenario-moderation --skill scenario-meshy --skill scenario-rodin --skill scenario-sparc3d --skill scenario-3d-worlds --skill scenario-gemini-image --skill scenario-audio --skill scenario-sonilo
-```
-
-**Marketing and brand visuals** (22 skills). One product shot and a brief turned into on-brand stills, ads, UGC videos, and every placement size.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-product-shots --skill scenario-brand-kit --skill scenario-video-ads --skill scenario-ugc --skill scenario-formats --skill scenario-inspiration --skill scenario-image --skill scenario-image-editing --skill scenario-text-overlay --skill scenario-video --skill scenario-video-editing --skill scenario-audio --skill scenario-video-assembly --skill scenario-consistency --skill scenario-asset-analysis --skill scenario-veo --skill scenario-seedance --skill scenario-kling --skill scenario-elevenlabs --skill scenario-ad-variants --skill scenario-thumbnails
-```
-
-**Video, music video, and audio** (23 skills). Video made, edited, and scored, from a single clip to a whole-song music video, with voice, music, and sound effects.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-video --skill scenario-video-editing --skill scenario-audio --skill scenario-video-assembly --skill scenario-image-editing --skill scenario-text-overlay --skill scenario-seedance-music-video --skill scenario-kinetic-music-video --skill scenario-minimax-video --skill scenario-gemini-omni --skill scenario-grok-imagine-video --skill scenario-veo --skill scenario-seedance --skill scenario-kling --skill scenario-vidu --skill scenario-wan --skill scenario-runway --skill scenario-luma-video --skill scenario-minimax-music --skill scenario-elevenlabs --skill scenario-ace-step --skill scenario-sonilo
-```
-
-**Consistent characters and custom models** (11 skills). One character, product, or style held across a whole set, and a model trained on your own art.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-consistency --skill scenario-identity-library --skill scenario-model-training --skill scenario-image-editing --skill scenario-sprite-animation --skill scenario-video --skill scenario-asset-analysis --skill scenario-quality-gate --skill scenario-seedream --skill scenario-gemini-image
-```
-
-**Images and editing** (26 skills). Images generated and edited, exact text overlays, and a sequence storyboarded.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-image --skill scenario-multi-reference --skill scenario-image-editing --skill scenario-text-overlay --skill scenario-storyboards --skill scenario-game-assets --skill scenario-textures --skill scenario-skyboxes --skill scenario-video --skill scenario-video-editing --skill scenario-seedance-storyboard --skill scenario-video-ads --skill scenario-video-assembly --skill scenario-consistency --skill scenario-asset-analysis --skill scenario-gpt-image --skill scenario-mai-image --skill scenario-seedream --skill scenario-gemini-image --skill scenario-reve --skill scenario-ideogram --skill scenario-grok-imagine-image --skill scenario-luma-image --skill scenario-ad-variants --skill scenario-thumbnails
-```
-
-**ChatGPT and Codex pets** (3 skills). An animated pet hatched from an idea or a photo, or an existing one fixed or restyled, delivered as a sprite sheet, a GIF, and a Codex package.
-
-```bash
-npx skills add scenario-labs/skills --skill scenario --skill scenario-chatgpt-pet-create --skill scenario-chatgpt-pet-update
-```
-
-**Expert tools.** A family installs as one set, since its specialists import the lead skill's scripts: select its "Expert tools" group in the installer menu, or run the command in its family README ([ZBrush](skills/dcc/zbrush/README.md), [Blender](skills/dcc/blender/README.md), [Maya](skills/dcc/maya/README.md), [Unreal Engine](skills/game-engines/unreal/README.md), [Unity](skills/game-engines/unity/README.md), [Godot](skills/game-engines/godot/README.md)).
+**Expert tools.** A family installs as one set, since its specialists import the lead skill's
+scripts: select its "Expert tools" group in the installer menu, or run the command in its family
+README ([ZBrush](skills/dcc/zbrush/README.md), [Blender](skills/dcc/blender/README.md),
+[Maya](skills/dcc/maya/README.md), [Unreal Engine](skills/game-engines/unreal/README.md),
+[Unity](skills/game-engines/unity/README.md), [Godot](skills/game-engines/godot/README.md),
+[Roblox Studio](skills/game-engines/roblox/README.md)).
 
 **Pick, or install one skill.**
 
@@ -94,7 +82,10 @@ npx skills add scenario-labs/skills
 npx skills add scenario-labs/skills --skill scenario
 ```
 
-The menu's topic groups cannot be selected from the command line: the CLI matches `--skill` against exact skill names only, and a group flag is an open request upstream ([vercel-labs/skills#992](https://github.com/vercel-labs/skills/issues/992)). From a script or CI, run one of the commands above with `-y`, which skips every prompt.
+The menu's topic groups cannot be selected from the command line: the CLI matches `--skill` against
+exact skill names only, and a group flag is an open request upstream
+([vercel-labs/skills#992](https://github.com/vercel-labs/skills/issues/992)). From a script or CI,
+run the default command above or a role command from INSTALL.md with `-y`, which skips every prompt.
 
 The Scenario skills need the Scenario MCP server connected:
 
@@ -102,14 +93,24 @@ The Scenario skills need the Scenario MCP server connected:
 claude mcp add --transport http scenario https://mcp.scenario.com/mcp
 ```
 
-Or add `https://mcp.scenario.com/mcp` to any MCP client and sign in with a Scenario account (OAuth), or use an [API key](https://app.scenario.com/settings/api). Full setup lives in the `scenario` skill.
+Or add `https://mcp.scenario.com/mcp` to any MCP client and sign in with a Scenario account (OAuth),
+or use an [API key](https://app.scenario.com/settings/api). Full setup lives in the `scenario`
+skill.
 
 ## Staying up to date
 
-Installs always fetch the latest copy of each skill from `main`; there is no version pinning. Releases are how changes become visible: every feature, fix, and documentation change merged to `main` lands in the next release, staged by release-please as an open release PR. Merging that PR tags a version, updates `CHANGELOG.md` in this repository, publishes a [GitHub release](https://github.com/scenario-labs/skills/releases), and posts the notes to the [Scenario changelog](https://www.scenario.com/changelog).
+Installs always fetch the latest copy of each skill from `main`; there is no version pinning.
+Releases are how changes become visible: every feature, fix, and documentation change merged to
+`main` lands in the next release, staged by release-please as an open release PR. Merging that PR
+tags a version, updates `CHANGELOG.md` in this repository, publishes a
+[GitHub release](https://github.com/scenario-labs/skills/releases), and posts the notes to the
+[Scenario changelog](https://www.scenario.com/changelog).
 
-- To learn that a skill changed, watch this repository's releases (Watch, then Custom, then Releases on GitHub) or check any of the changelog pages above. An entry scoped to a single skill carries that skill's name; changes spanning several skills appear under broader scopes such as `skills`.
-- To pull the changes, run `npx skills update` where you installed, or re-run your original `npx skills add` command.
+- To learn that a skill changed, watch this repository's releases (Watch, then Custom, then Releases
+  on GitHub) or check any of the changelog pages above. An entry scoped to a single skill carries
+  that skill's name; changes spanning several skills appear under broader scopes such as `skills`.
+- To pull the changes, run `npx skills update` where you installed, or re-run your original
+  `npx skills add` command.
 
 ## Skills
 
@@ -123,7 +124,8 @@ Connect the Scenario MCP server and learn the core generation loop every other s
 
 ### Finding a direction
 
-Turn a blank brief into references, options someone can choose between, and a moodboard the next batch runs from.
+Turn a blank brief into references, options someone can choose between, and a moodboard the next
+batch runs from.
 
 | Skill                                                        | Use it for                                                                                                            |
 | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
@@ -131,7 +133,8 @@ Turn a blank brief into references, options someone can choose between, and a mo
 
 ### Images
 
-Generate and edit images: model choice, sizing, references, masked edits, post-processing tools, and letter-perfect text overlay cards.
+Generate and edit images: model choice, sizing, references, masked edits, post-processing tools, and
+letter-perfect text overlay cards.
 
 | Skill                                                                | Use it for                                                                                                            |
 | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -146,44 +149,55 @@ Generate and edit images: model choice, sizing, references, masked edits, post-p
 
 ### Game art and 3D
 
-Sprites, icons, tilesets, textures, skyboxes, 3D models, and walkable spaces for games, the web, and interactive scenes.
+Sprites, icons, tilesets, textures, skyboxes, 3D models, and walkable spaces for games, the web, and
+interactive scenes.
 
-| Skill                                                                      | Use it for                                                                                                                                                                             |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [scenario-game-assets](skills/scenario-game-assets/SKILL.md)               | Sprites, icons, props, tilesets, pixel art, concept art, transparent backgrounds, style-consistent batches                                                                             |
-| [scenario-sprite-animation](skills/scenario-sprite-animation/SKILL.md)     | Walk cycles, idle loops, VFX sprites, and animation sheets from one prompt: GIF vs sprite sheet output, frame slicing, pixel cleanup                                                   |
-| [scenario-side-view-game-kit](skills/scenario-side-view-game-kit/SKILL.md) | Side-scroller and platformer art: side-view pixel sprite strips for a hero and enemies (run, walk, attack, hurt, poses), parallax layers, seamless wall texture, platform strip, props |
-| [scenario-textures](skills/scenario-textures/SKILL.md)                     | Seamless and tileable textures, PBR materials, tiling-safe upscaling, engine-ready sizing                                                                                              |
-| [scenario-skyboxes](skills/scenario-skyboxes/SKILL.md)                     | 360 equirectangular panoramas and skyboxes, seam-safe upscaling, engine export                                                                                                         |
-| [scenario-3d](skills/scenario-3d/SKILL.md)                                 | Text or image to 3D meshes, multi-view reconstruction, retexture and remesh, inline 3D preview, GLB/FBX download                                                                       |
-| [scenario-patina-retexture](skills/scenario-patina-retexture/SKILL.md)     | PATINA PBR retexture of a finished mesh: material families, one map set per family, Blender apply with geometry untouched, matched before/after comparison film                        |
-| [scenario-orbit-views](skills/scenario-orbit-views/SKILL.md)               | New camera angles of one picture through a 3D intermediary: clay layouts in a grounded panorama, repaint per camera, matched transparent set                                           |
-| [scenario-walkable-room](skills/scenario-walkable-room/SKILL.md)           | A room from one interior photo to walk into: clean plate, splat world, PBR props with impact sounds, splat-based calibration, physics viewer with grab and throw                       |
+| Skill                                                                          | Use it for                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [scenario-game-assets](skills/scenario-game-assets/SKILL.md)                   | Sprites, icons, props, tilesets, pixel art, concept art, transparent backgrounds, style-consistent batches                                                                                                                                                                                        |
+| [scenario-sprite-animation](skills/scenario-sprite-animation/SKILL.md)         | Walk cycles, idle loops, VFX sprites, and animation sheets from one prompt: GIF vs sprite sheet output, frame slicing, pixel cleanup                                                                                                                                                              |
+| [scenario-side-view-game-kit](skills/scenario-side-view-game-kit/SKILL.md)     | Side-scroller and platformer art: side-view pixel sprite strips for a hero and enemies (run, walk, attack, hurt, poses), parallax layers, seamless wall texture, platform strip, props                                                                                                            |
+| [scenario-blender-2d-animation](skills/scenario-blender-2d-animation/SKILL.md) | A side-scroller shot animated in Blender from Scenario pictures: a concept frame that locks the look, parallax layers, props and a hero run cycle on its reference, flat image cards with an orthographic camera, keyed jumps and rigid-body props, and a whole new look by swapping the pictures |
+| [scenario-textures](skills/scenario-textures/SKILL.md)                         | Seamless and tileable textures, PBR materials, tiling-safe upscaling, engine-ready sizing                                                                                                                                                                                                         |
+| [scenario-skyboxes](skills/scenario-skyboxes/SKILL.md)                         | 360 equirectangular panoramas and skyboxes, seam-safe upscaling, engine export                                                                                                                                                                                                                    |
+| [scenario-3d](skills/scenario-3d/SKILL.md)                                     | Text or image to 3D meshes, multi-view reconstruction, retexture and remesh, inline 3D preview, GLB/FBX download                                                                                                                                                                                  |
+| [scenario-video-to-motion](skills/scenario-video-to-motion/SKILL.md)           | Motion capture from a reference or generated video: an uploaded character auto-rigged and animated, or motion alone on a Mixamo or MetaHuman skeleton, with in-place, looping, and engine-ready exports                                                                                           |
+| [scenario-blender](skills/scenario-blender/SKILL.md)                           | Drive an open Blender scene through the Scenario for Blender extension's local MCP server: read the scene, quote and run generations, capture viewport references, place results, plan camera paths                                                                                               |
+| [scenario-patina-retexture](skills/scenario-patina-retexture/SKILL.md)         | PATINA PBR retexture of a finished mesh: material families, one map set per family, Blender apply with geometry untouched, matched before/after comparison film                                                                                                                                   |
+| [scenario-orbit-views](skills/scenario-orbit-views/SKILL.md)                   | New camera angles of one picture through a 3D intermediary: clay layouts in a grounded panorama, repaint per camera, matched transparent set                                                                                                                                                      |
+| [scenario-walkable-room](skills/scenario-walkable-room/SKILL.md)               | A room from one interior photo to walk into: clean plate, splat world, PBR props with impact sounds, splat-based calibration, physics viewer with grab and throw                                                                                                                                  |
 
 ### Video and audio
 
-Video generation and editing, music, sound effects, voice, and speech.
+Video generation, editing, and color grading, seamless motion loops, music, sound effects, voice,
+and speech.
 
-| Skill                                                                          | Use it for                                                                                                                            |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [scenario-video](skills/scenario-video/SKILL.md)                               | Text-to-video and image-to-video, motion prompting, lipsync, video editing, upscaling, cut/split/concat utilities                     |
-| [scenario-video-editing](skills/scenario-video-editing/SKILL.md)               | Tool-model footage edits: LUT grades and effects, trim, split, resize, reverse, frames, masks, layers                                 |
-| [scenario-seedance-music-video](skills/scenario-seedance-music-video/SKILL.md) | Turning a song into a music video: beat-aligned shots, lyric transcription, shot sound under the master, assembly                     |
-| [scenario-seedance-storyboard](skills/scenario-seedance-storyboard/SKILL.md)   | Movement that holds across cuts: timecoded shot scripts, character sheets and boards, pose-chained shots that play as one performance |
-| [scenario-video-ads](skills/scenario-video-ads/SKILL.md)                       | Producing a video ad from a product shot: brief, storyboard, cinematic grammar, fidelity gates, budget, delivery                      |
-| [scenario-ad-variants](skills/scenario-ad-variants/SKILL.md)                   | Ordered independent campaign edits from existing footage, preserving original gameplay and audio                                      |
-| [scenario-audio](skills/scenario-audio/SKILL.md)                               | Music, sound effects, voice and speech generation, video scoring, audio utilities                                                     |
-| [scenario-video-assembly](skills/scenario-video-assembly/SKILL.md)             | Assembling clips into a finished video: timeline composition, concat with transitions, overlays, music, captions                      |
-| [scenario-caption-studio](skills/scenario-caption-studio/SKILL.md)             | Captioning a finished video per destination: styled burn-in or SRT, transcription hints, translation, per-platform placement          |
+| Skill                                                                          | Use it for                                                                                                                                  |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [scenario-video](skills/scenario-video/SKILL.md)                               | Text-to-video and image-to-video, motion prompting, lipsync, video editing, upscaling, cut/split/concat utilities                           |
+| [scenario-video-editing](skills/scenario-video-editing/SKILL.md)               | Tool-model footage edits: LUT grades and effects, trim, split, resize, reverse, frames, masks, layers                                       |
+| [scenario-video-color-grade](skills/scenario-video-color-grade/SKILL.md)       | Code-written grades on existing footage: looks, relight, log to Rec.709, reference match, one kept color with masks, .cube LUTs, a showreel |
+| [scenario-seedance-music-video](skills/scenario-seedance-music-video/SKILL.md) | Turning a song into a music video: beat-aligned shots, lyric transcription, shot sound under the master, assembly                           |
+| [scenario-seedance-storyboard](skills/scenario-seedance-storyboard/SKILL.md)   | Movement that holds across cuts: timecoded shot scripts, character sheets and boards, pose-chained shots that play as one performance       |
+| [scenario-seedance-drafts](skills/scenario-seedance-drafts/SKILL.md)           | Cheap 480p Seedance takes reviewed and ranked, only the picks finalized to 1080p, with the draft-versus-final cost math                     |
+| [scenario-video-ads](skills/scenario-video-ads/SKILL.md)                       | Producing a video ad from a product shot: brief, storyboard, cinematic grammar, fidelity gates, budget, delivery                            |
+| [scenario-ad-variants](skills/scenario-ad-variants/SKILL.md)                   | Ordered independent campaign edits from existing footage, preserving original gameplay and audio                                            |
+| [scenario-audio](skills/scenario-audio/SKILL.md)                               | Music, sound effects, voice and speech generation, video scoring, audio utilities                                                           |
+| [scenario-video-assembly](skills/scenario-video-assembly/SKILL.md)             | Assembling clips into a finished video: timeline composition, concat with transitions, overlays, music, captions                            |
+| [scenario-motion-loops](skills/scenario-motion-loops/SKILL.md)                 | Seamless brand-color motion loops in code (backgrounds, bumpers, shape animations) rendered to MP4, with a Scenario cut-out over them       |
+| [scenario-caption-studio](skills/scenario-caption-studio/SKILL.md)             | Captioning a finished video per destination: styled burn-in or SRT, transcription hints, translation, per-platform placement                |
 
 ### Socials
 
-Made for social feeds and chat apps: UGC-style creator videos, fan-cam reactions from a photo, kinetic-typography lyric videos, and animated ChatGPT and Codex pets, new or updated.
+Made for social feeds and chat apps: UGC-style creator videos, fan-cam reactions from a photo, trend
+reels recast with your own character, kinetic-typography lyric videos, and animated ChatGPT and
+Codex pets, new or updated.
 
 | Skill                                                                        | Use it for                                                                                                                                                               |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [scenario-ugc](skills/scenario-ugc/SKILL.md)                                 | UGC-style creator video: talking-head and avatar ads, demos, faceless voiceover, spoken-register scripts, claim safety                                                   |
 | [scenario-fan-cam](skills/scenario-fan-cam/SKILL.md)                         | Personalized fan-cam clips: identity edit into a broadcast still, reaction beats to video, graphics composited in post                                                   |
+| [scenario-reel-recast](skills/scenario-reel-recast/SKILL.md)                 | A trending reel performed again by your character: same moves, camera and song, outfit swaps, a redecorated room                                                         |
 | [scenario-kinetic-music-video](skills/scenario-kinetic-music-video/SKILL.md) | Kinetic-typography music video, landscape or 9:16: style frames and footage from Scenario, a JavaScript engine for lyric type on sung onsets, mattes, per-section agents |
 | [scenario-chatgpt-pet-create](skills/scenario-chatgpt-pet-create/SKILL.md)   | ChatGPT or Codex pet from an idea or photos: a v2 sprite sheet with sixteen look directions, a v1 copy for web upload, pixel-perfect mode, GIFs, a Codex package         |
 | [scenario-chatgpt-pet-update](skills/scenario-chatgpt-pet-update/SKILL.md)   | Change an existing pet sheet: fix or redo a row, add look directions to a v1 sheet, a new outfit or color, a rename, a check and GIF preview                             |
@@ -200,7 +214,8 @@ Hold one character, product, or style across a whole set, and train custom model
 
 ### Reviewing and organizing output
 
-Read finished assets back: caption them, extract a style or a control map, check a batch against a brief or the Quality Gate, compare candidate models on one brief, and file the keepers.
+Read finished assets back: caption them, extract a style or a control map, check a batch against a
+brief or the Quality Gate, compare candidate models on one brief, and file the keepers.
 
 | Skill                                                                  | Use it for                                                                                                                                                  |
 | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -211,7 +226,8 @@ Read finished assets back: caption them, extract a style or a control map, check
 
 ### Formats and placements
 
-Ship one approved master, image or video, to every placement: ratios, safe zones, and platform specs from social feeds to shops, storefronts, and print.
+Ship one approved master, image or video, to every placement: ratios, safe zones, and platform specs
+from social feeds to shops, storefronts, and print.
 
 | Skill                                                | Use it for                                                                                                                   |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -219,7 +235,8 @@ Ship one approved master, image or video, to every placement: ratios, safe zones
 
 ### Workflows and apps
 
-Discover, run, build, and publish Scenario workflows (apps), and migrate graphs from Weavy, ComfyUI, or other node editors.
+Discover, run, build, and publish Scenario workflows (apps), and migrate graphs from Weavy, ComfyUI,
+or other node editors.
 
 | Skill                                                                      | Use it for                                                                                                                                               |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -237,7 +254,8 @@ Get past a blocked generation, and turn a stuck session into a reproducible publ
 
 ### Team administration
 
-Govern a team from the agent: which models it can run, who is on it and in which projects, per-member spend caps, API key roles, and who spent what.
+Govern a team from the agent: which models it can run, who is on it and in which projects,
+per-member spend caps, API key roles, and who spent what.
 
 | Skill                                                                | Use it for                                                                                                             |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -246,7 +264,8 @@ Govern a team from the agent: which models it can run, who is on it and in which
 
 ### Image model families
 
-The top image families in depth: generation and editing modes, reference rules, and the caps that differ per member.
+The top image families in depth: generation and editing modes, reference rules, and the caps that
+differ per member.
 
 | Skill                                                                      | Use it for                                                                                                                                                                                                                                           |
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -261,7 +280,8 @@ The top image families in depth: generation and editing modes, reference rules, 
 
 ### Video model families
 
-The top video families in depth: conditioning modes, native audio, editing and extension, and per-member caps and costs.
+The top video families in depth: conditioning modes, native audio, editing and extension, and
+per-member caps and costs.
 
 | Skill                                                                      | Use it for                                                                                                                                                 |
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -278,7 +298,8 @@ The top video families in depth: conditioning modes, native audio, editing and e
 
 ### Audio model families
 
-The top audio families in depth: music, covers and stems, sound effects, speech, dubbing, and video scoring.
+The top audio families in depth: music, covers and stems, sound effects, speech, dubbing, and video
+scoring.
 
 | Skill                                                            | Use it for                                                                                                                              |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -289,7 +310,8 @@ The top audio families in depth: music, covers and stems, sound effects, speech,
 
 ### 3D model families
 
-The top 3D families in depth: mesh generation, retexture and rigging toolchains, portraits, and explorable worlds and splats.
+The top 3D families in depth: mesh generation, retexture and rigging toolchains, portraits, and
+explorable worlds and splats.
 
 | Skill                                                    | Use it for                                                                                                                                                                              |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -300,7 +322,10 @@ The top 3D families in depth: mesh generation, retexture and rigging toolchains,
 
 ### Expert tools: ZBrush
 
-DCC software. A lead and eight specialists that drive Maxon ZBrush 2026 through its agent bridge: sculpting, characters and creatures, stylized work, hard surface, polypaint and renders, posing and 3D print, retopology and export, automation. The bridge was proven live; full live tests of every skill are still pending.
+DCC software. A lead and eight specialists that drive Maxon ZBrush 2026 through its agent bridge:
+sculpting, characters and creatures, stylized work, hard surface, polypaint and renders, posing and
+3D print, retopology and export, automation. The bridge was proven live; full live tests of every
+skill are still pending.
 
 | Skill                                                                                               | Use it for                                                                                                                                                       |
 | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -316,12 +341,17 @@ DCC software. A lead and eight specialists that drive Maxon ZBrush 2026 through 
 
 ### Expert tools: Blender
 
-DCC software. A lead and twelve specialists that drive Blender 5.2 through Python, headless or in a live session: sculpting, retopology, UVs and baking, shading, hair, rigging, animation, previs, Geometry Nodes, lighting, Grease Pencil, hard surface. Test suites pass headless on Blender 5.2.1.
+DCC software. A lead and fourteen specialists that drive Blender 5.2 through Python, headless or in
+a live session: sculpting, retopology, UVs and baking, shading, hair, rigging, animation, previs,
+blockouts for render-to-real video, Geometry Nodes, lighting, Grease Pencil, hard surface, export to
+game engines. Twelve test suites pass headless on Blender 5.2.1.
 
 | Skill                                                                                                  | Use it for                                                                                                                                                     |
 | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [scenario-blender-expert](skills/dcc/blender/scenario-blender-expert/SKILL.md)                         | Blender lead: Python headless or through a live MCP bridge, the expert review loop, the shared review and mesh-audit toolkit, Blender 5.2 API traps            |
 | [scenario-blender-animation](skills/dcc/blender/scenario-blender-animation/SKILL.md)                   | Blender animation: cycles, jumps, acting and lip sync, stepped blocking to spline and polish, timing and spacing, graph editor, slotted actions and NLA        |
+| [scenario-blender-blockout](skills/dcc/blender/scenario-blender-blockout/SKILL.md)                     | Blockouts that guide render-to-real video: color-coded proxies at metric scale, cameras locked to the timeline, framing audits, playblast and hand-off sheet   |
+| [scenario-blender-export](skills/dcc/blender/scenario-blender-export/SKILL.md)                         | Exports for game engines: FBX, GLB, USDZ and STL presets for Unity, Unreal, Godot, Roblox, three.js, round-trip checks, LODs, collision, batch                 |
 | [scenario-blender-geometry-nodes](skills/dcc/blender/scenario-blender-geometry-nodes/SKILL.md)         | Geometry Nodes: procedural modeling, scattering, curves and loops, simulation zones, 5.2 physics, closures and bundles, node-group assets                      |
 | [scenario-blender-grease-pencil](skills/dcc/blender/scenario-blender-grease-pencil/SKILL.md)           | Grease Pencil in Blender 5.x: 2D and 2.5D illustration, frame-by-frame and cutout animation, fills, interpolation, Line Art, strokes on meshes                 |
 | [scenario-blender-hair](skills/dcc/blender/scenario-blender-hair/SKILL.md)                             | Hair and fur with hair curves: hairstyles, animal fur, Essentials hair nodes, density masks and partings, hair cards and mesh hair for games                   |
@@ -336,7 +366,9 @@ DCC software. A lead and twelve specialists that drive Blender 5.2 through Pytho
 
 ### Expert tools: Maya
 
-DCC software. A lead and ten specialists that drive Autodesk Maya 2027 through Python, batch or live: modeling, retopology and UVs, rigging, skinning, animation, groom, FX, look dev, Arnold lighting and rendering, pipeline scripting.
+DCC software. A lead and ten specialists that drive Autodesk Maya 2027 through Python, batch or
+live: modeling, retopology and UVs, rigging, skinning, animation, groom, FX, look dev, Arnold
+lighting and rendering, pipeline scripting.
 
 | Skill                                                                                         | Use it for                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -354,7 +386,9 @@ DCC software. A lead and ten specialists that drive Autodesk Maya 2027 through P
 
 ### Expert tools: Unreal Engine
 
-Game engine. A lead and nine specialists that drive Unreal Engine 5.8 on macOS through Editor Python, headless jobs, and Epic's Unreal MCP server: world building, materials, lighting and rendering, gameplay, animation, cinematics, VFX, pipeline automation, performance.
+Game engine. A lead and nine specialists that drive Unreal Engine 5.8 on macOS through Editor
+Python, headless jobs, and Epic's Unreal MCP server: world building, materials, lighting and
+rendering, gameplay, animation, cinematics, VFX, pipeline automation, performance.
 
 | Skill                                                                                                          | Use it for                                                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -371,7 +405,10 @@ Game engine. A lead and nine specialists that drive Unreal Engine 5.8 on macOS t
 
 ### Expert tools: Unity
 
-Game engine. A lead and thirteen specialists that drive Unity 6.3 LTS on macOS through batch mode, a live editor, and command-line builds: architecture, gameplay, 2D, animation, UI, VFX, shaders, rendering and lighting, world building, performance, mobile, Web, pipeline automation. Every procedure was run live in Unity 6.3.
+Game engine. A lead and thirteen specialists that drive Unity 6.3 LTS on macOS through batch mode, a
+live editor, and command-line builds: architecture, gameplay, 2D, animation, UI, VFX, shaders,
+rendering and lighting, world building, performance, mobile, Web, pipeline automation. Every
+procedure was run live in Unity 6.3.
 
 | Skill                                                                                                       | Use it for                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -392,7 +429,10 @@ Game engine. A lead and thirteen specialists that drive Unity 6.3 LTS on macOS t
 
 ### Expert tools: Godot
 
-Game engine. A lead and thirteen specialists that drive Godot 4.7 on macOS through headless jobs, windowed captures, GUT and gdUnit4 tests, and command-line exports: architecture, gameplay, 2D, 3D worlds, animation, UI, VFX, shaders, rendering and lighting, audio, multiplayer, performance and export, pipeline automation. Every procedure was run live in Godot 4.7.2.
+Game engine. A lead and thirteen specialists that drive Godot 4.7 on macOS through headless jobs,
+windowed captures, GUT and gdUnit4 tests, and command-line exports: architecture, gameplay, 2D, 3D
+worlds, animation, UI, VFX, shaders, rendering and lighting, audio, multiplayer, performance and
+export, pipeline automation. Every procedure was run live in Godot 4.7.2.
 
 | Skill                                                                                                       | Use it for                                                                                                                                                     |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -411,6 +451,30 @@ Game engine. A lead and thirteen specialists that drive Godot 4.7 on macOS throu
 | [scenario-godot-ui](skills/game-engines/godot/scenario-godot-ui/SKILL.md)                                   | Godot game UI: main menu, settings, HUD and health bars, Control layout, containers and anchors, themes, scaling to any screen, gamepad focus, localization    |
 | [scenario-godot-vfx](skills/game-engines/godot/scenario-godot-vfx/SKILL.md)                                 | Godot VFX and game feel: GPUParticles explosions, fireballs with trails, impacts, sparks and smoke, hit stop, screen shake, particle cost on phones            |
 
+### Expert tools: Roblox Studio
+
+Game engine. A lead and thirteen specialists that drive Roblox Studio on macOS through its built-in
+MCP server, playtests driven by code, offline Luau checks, and Rojo builds: architecture, Luau,
+networking and security, data, tooling, environment, VFX and audio, UI, animation, gameplay, assets
+and avatar items, performance, monetization. Procedures were run live in Roblox Studio 0.743.
+
+| Skill                                                                                            | Use it for                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [scenario-roblox-expert](skills/game-engines/roblox/scenario-roblox-expert/SKILL.md)             | Roblox lead: Studio's built-in MCP server, Luau run in Edit and in playtests, simulated input and captures, two-solver type checks, Rojo, RunScript, Open Cloud                          |
+| [scenario-roblox-animation](skills/game-engines/roblox/scenario-roblox-animation/SKILL.md)       | Roblox animation: priorities and blending, events and markers, Blender and FBX imports, custom and creature rigs, IKControl, FaceControls, Animate replacements, NPC animators           |
+| [scenario-roblox-architecture](skills/game-engines/roblox/scenario-roblox-architecture/SKILL.md) | Roblox code structure: where scripts go, RunContext, module loaders, services and controllers, signals and attributes, CollectionService tags, cleanup, Rojo layout                      |
+| [scenario-roblox-assets](skills/game-engines/roblox/scenario-roblox-assets/SKILL.md)             | Roblox 3D assets and avatar items: Blender, GLB, and FBX imports, AI-generated meshes, scale in studs, triangle and texture budgets, PBR SurfaceAppearance, UGC validation               |
+| [scenario-roblox-data](skills/game-engines/roblox/scenario-roblox-data/SKILL.md)                 | Roblox player data: DataStores and UpdateAsync, session locking with ProfileStore, schema migration, receipts granted once, trading, leaderboards, MemoryStore, teleports                |
+| [scenario-roblox-environment](skills/game-engines/roblox/scenario-roblox-environment/SKILL.md)   | Roblox maps and lighting: graybox, terrain, parts vs unions, collision fidelity, MaterialVariants, Lighting and Atmosphere moods, foliage scatter, streaming, level of detail            |
+| [scenario-roblox-gameplay](skills/game-engines/roblox/scenario-roblox-gameplay/SKILL.md)         | Roblox gameplay: NPC AI and pathfinding, hundreds of enemies, hitboxes and melee combos, raycasts and projectiles, knockback, physics movers, vehicles, round loops                      |
+| [scenario-roblox-luau](skills/game-engines/roblox/scenario-roblox-luau/SKILL.md)                 | Roblox Luau: task library and deferred events, --!strict and the new type solver, typed classes, memory leaks, Parallel Luau with Actors, --!native, buffers                             |
+| [scenario-roblox-monetization](skills/game-engines/roblox/scenario-roblox-monetization/SKILL.md) | Roblox monetization and live ops: Developer Products and passes, subscriptions, receipts granted once, loot odds and PolicyService, rewarded video, analytics funnels, A/B tests         |
+| [scenario-roblox-networking](skills/game-engines/roblox/scenario-roblox-networking/SKILL.md)     | Roblox networking and security: remote design and server validation, rate limits, speed, fly, and hitbox exploits, network ownership, Server Authority, bandwidth                        |
+| [scenario-roblox-performance](skills/game-engines/roblox/scenario-roblox-performance/SKILL.md)   | Roblox performance: mobile FPS and frame spikes, server heartbeat, physics and network load, memory leaks, MicroProfiler and Script Profiler, streaming, budgets, releases and rollbacks |
+| [scenario-roblox-tooling](skills/game-engines/roblox/scenario-roblox-tooling/SKILL.md)           | Roblox team tooling: Rojo and Script Sync, Wally, Rokit, luau-lsp, Selene, StyLua, Lune and in-engine tests, GitHub Actions CI, Open Cloud publishing and Luau Execution                 |
+| [scenario-roblox-ui](skills/game-engines/roblox/scenario-roblox-ui/SKILL.md)                     | Roblox game UI and input: HUD, menus, shop grids, scaling from phone to TV, safe areas, layouts and StyleSheets, gamepad navigation, the Input Action System, localization               |
+| [scenario-roblox-vfx-audio](skills/game-engines/roblox/scenario-roblox-vfx-audio/SKILL.md)       | Roblox VFX and audio: particles, beams, trails, flipbooks, hit and explosion effects, the Audio API with wires and emitters, 3D sound, music and ducking, footsteps                      |
+
 ## Example prompts
 
 Once the skills are installed and the MCP server is connected, ask your agent things like:
@@ -421,13 +485,25 @@ Once the skills are installed and the MCP server is connected, ask your agent th
 
 ## What is an Agent Skill?
 
-A skill is a `SKILL.md` file with procedural knowledge an agent loads on demand, defined by the open [Agent Skills specification](https://agentskills.io/specification). The `skills` CLI installs these files into 70+ agents, and the ecosystem directory lives at [skills.sh](https://www.skills.sh).
+A skill is a `SKILL.md` file with procedural knowledge an agent loads on demand, defined by the open
+[Agent Skills specification](https://agentskills.io/specification). The `skills` CLI installs these
+files into 70+ agents, and the ecosystem directory lives at [skills.sh](https://www.skills.sh).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow, and [AGENTS.md](AGENTS.md) for the authoring contract, the public-content policy, validation, and the application-testing bar. One-time setup after cloning: `pnpm install` (installs commitlint, cspell, prettier, and the husky git hooks). `pnpm run validate` runs the same content checks CI runs; commit messages and the PR title are linted separately with commitlint. PRs welcome; PR titles follow Conventional Commits since they become the squash commit header on `main`.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow, and [AGENTS.md](AGENTS.md) for
+the authoring contract, the public-content policy, validation, and the application-testing bar.
+One-time setup after cloning: install the [prerequisites](CONTRIBUTING.md#setup), uv included, then
+run `pnpm install` (installs commitlint, cspell, prettier, and the husky git hooks).
+`pnpm run validate` runs the same content checks CI runs; commit messages and the PR title are
+linted separately with commitlint. PRs welcome; PR titles follow Conventional Commits since they
+become the squash commit header on `main`.
 
-Every script shipped with a skill has a test suite in `tests/<name>/`; `pnpm test` runs them all (CI does too). Suites need Python 3.11+ with any `tests/<name>/requirements.txt` dependencies installed, plus ffmpeg on PATH where a suite uses it. Python suites use stdlib `unittest`, TypeScript suites use vitest.
+Every script shipped with a skill has a test suite in `tests/<name>/`; `pnpm test` runs them all (CI
+does too). Suites need Python 3.11+, plus ffmpeg on PATH where a suite uses it. With uv installed,
+`pnpm test` gives each suite the dependencies in its `tests/<name>/requirements.txt`; without uv,
+install them into `python3` first. Python suites use stdlib `unittest`, TypeScript suites use
+vitest.
 
 ## License
 

@@ -16,3 +16,37 @@ updates:
     commit-message:
       prefix: ci
       include: scope
+  - package-ecosystem: npm
+    directories: ["/", "/skills/scenario-kinetic-music-video/assets/npm"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      npm:
+        patterns: ["*"]
+    ignore:
+      # Must stay the version release-please-action bundles (see above).
+      - dependency-name: release-please
+      # The engine imports dist/opentype.module.js, which 2.x renamed.
+      - dependency-name: opentype.js
+        update-types: ["version-update:semver-major"]
+    # A fixed scope: `include: scope` writes `deps-dev` for these devDependencies, which commitlint
+    # rejects.
+    commit-message:
+      prefix: chore(deps)
+  - package-ecosystem: pip
+    directories: ["/tests", "/tests/*"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    # Raises the floors too: advisory scanners read a requirement's lower bound, not the version
+    # CI installs.
+    versioning-strategy: increase
+    groups:
+      pip:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+      include: scope

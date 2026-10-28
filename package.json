@@ -19,21 +19,26 @@
     "words:check": "./scripts/sort-project-words.sh --check",
     "spec": "./scripts/validate-skills.sh",
     "lint:py": "uvx ruff@0.16.10 check",
-    "test": "pnpm test:agent-commands && pnpm test:manifest && ./scripts/test-skill-scripts.sh",
+    "test": "pnpm test:agent-commands && pnpm test:manifest && pnpm test:style && pnpm test:readme && pnpm test:runner && ./scripts/test-skill-scripts.sh",
+    "test:coverage": "COVERAGE=1 ./scripts/test-skill-scripts.sh",
     "sync:agent-commands": "node scripts/sync-agent-commands.mjs",
     "sync:agent-commands:check": "node scripts/sync-agent-commands.mjs --check",
     "test:agent-commands": "node --test scripts/sync-agent-commands.test.mjs",
-    "test:manifest": "node --test scripts/generate-plugin-manifest.test.mjs"
+    "test:manifest": "node --test scripts/generate-plugin-manifest.test.mjs",
+    "test:style": "node --test scripts/check-style.test.mjs",
+    "test:readme": "node --test scripts/check-readme.test.mjs",
+    "test:runner": "node --test scripts/test-skill-scripts.test.mjs"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
-    "cspell": "^10.0.1",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@vitest/coverage-v8": "^5.0.5",
+    "cspell": "^10.4.0",
     "husky": "^9.1.7",
-    "prettier": "^3.9.6",
-    "prettier-plugin-sh": "^0.19.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-sh": "^0.20.2",
     "release-please": "17.6.0",
-    "vitest": "^4.1.10",
-    "yaml": "^2.9.0"
+    "vitest": "^5.0.5",
+    "yaml": "^2.9.1"
   }
 }

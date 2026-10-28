@@ -1,5 +1,139 @@
 # Changelog
 
+## [0.60.0](https://github.com/scenario-labs/skills/compare/skills-v0.59.0...skills-v0.60.0) (2026-10-26)
+
+
+### Features
+
+* **scenario-3d:** teach prompt-only 3D builds ([#316](https://github.com/scenario-labs/skills/issues/316)) ([b3cf5a4](https://github.com/scenario-labs/skills/commit/b3cf5a41efe603f93f5307b5bb7c7dad9fcd7925))
+* **scenario-motion-loops:** add seamless brand-color loops in code ([#283](https://github.com/scenario-labs/skills/issues/283)) ([6e7b8c3](https://github.com/scenario-labs/skills/commit/6e7b8c30f3589c57cf515a00820ddef7c81cc11f))
+* **scenario-video-editing:** teach green and blue screen keying ([#323](https://github.com/scenario-labs/skills/issues/323)) ([cf5b911](https://github.com/scenario-labs/skills/commit/cf5b911cee12a7542651cb374c0db3a0f27986fa))
+* **scenario-video-to-motion:** add video motion capture skill ([#324](https://github.com/scenario-labs/skills/issues/324)) ([0c853cf](https://github.com/scenario-labs/skills/commit/0c853cf79194bc07b6c4a19202d10e048b527150))
+
+
+### Bug Fixes
+
+* **deps:** lock installs and patch fast-uri ([#328](https://github.com/scenario-labs/skills/issues/328)) ([0158ff7](https://github.com/scenario-labs/skills/commit/0158ff76f771f3d11fa2714da67331cda498d9e0))
+* **scenario-3d:** apply game face budgets across image-to-3D ([#297](https://github.com/scenario-labs/skills/issues/297)) ([8cc9e9b](https://github.com/scenario-labs/skills/commit/8cc9e9b6a2848b6a16f7a6a727a937dab24b7cc6))
+* **scenario-3d:** keep a stored GLB as is on download ([#296](https://github.com/scenario-labs/skills/issues/296)) ([e0a051c](https://github.com/scenario-labs/skills/commit/e0a051cd6e3a7ce3b27b607f4f859611de0c49df)), closes [#289](https://github.com/scenario-labs/skills/issues/289)
+* **scenario-blender-blockout:** document headless build stages ([#295](https://github.com/scenario-labs/skills/issues/295)) ([e77c6fa](https://github.com/scenario-labs/skills/commit/e77c6fad59669ea2c6f2cc1a0f7c91d5a95bc9eb))
+* **scenario-blender-blockout:** take a hero's color from the brief ([#294](https://github.com/scenario-labs/skills/issues/294)) ([3d88cf5](https://github.com/scenario-labs/skills/commit/3d88cf53276c6f281e0314a021c76d67b044e123))
+* **scenario-blender-expert:** fail the gate on a mesh with no faces ([#291](https://github.com/scenario-labs/skills/issues/291)) ([9e052fa](https://github.com/scenario-labs/skills/commit/9e052fae613898464d52b93e3e947073c6934613))
+* **scenario-blender-expert:** look inside node groups for image textures ([#293](https://github.com/scenario-labs/skills/issues/293)) ([1662b7b](https://github.com/scenario-labs/skills/commit/1662b7b9f7b1f8a6061f3e2bacd9cf13c55a6975)), closes [#287](https://github.com/scenario-labs/skills/issues/287)
+* **scenario-blender-export:** close the gaps an application test found ([#302](https://github.com/scenario-labs/skills/issues/302)) ([06ba725](https://github.com/scenario-labs/skills/commit/06ba72576050043795aaad82184ba540a700e674))
+* **scenario-blender-export:** keep LODs of a glTF import closed ([#331](https://github.com/scenario-labs/skills/issues/331)) ([7598531](https://github.com/scenario-labs/skills/commit/759853164460184e7076097f938d93b9e954987f))
+* **scenario-kinetic-music-video:** document still plates and bloom ([#332](https://github.com/scenario-labs/skills/issues/332)) ([5ea59b5](https://github.com/scenario-labs/skills/commit/5ea59b5d664eb531e02ae15f4b38dbb21a68e979))
+* **scenario-workflow-authoring:** require only an output pin to publish ([#322](https://github.com/scenario-labs/skills/issues/322)) ([57754ca](https://github.com/scenario-labs/skills/commit/57754ca2d58d11e7675f16b87bbdf41358687a98))
+* **scenario:** bring the body back under the word cap ([#333](https://github.com/scenario-labs/skills/issues/333)) ([2fa1407](https://github.com/scenario-labs/skills/commit/2fa140761199a105bdd5c78d0c9a7eabde7ec2e6))
+* **scenario:** clarify payload-specific Relax-mode waits ([#321](https://github.com/scenario-labs/skills/issues/321)) ([059185f](https://github.com/scenario-labs/skills/commit/059185f954282d9981a7204a8cc72e1636506b50))
+* **scenario:** fit core guidance within the word budget ([cf5b911](https://github.com/scenario-labs/skills/commit/cf5b911cee12a7542651cb374c0db3a0f27986fa))
+* **scenario:** fit shared guidance within its word budget ([0c853cf](https://github.com/scenario-labs/skills/commit/0c853cf79194bc07b6c4a19202d10e048b527150))
+* **scenario:** route inline upload decode errors to the file_size path ([#320](https://github.com/scenario-labs/skills/issues/320)) ([78c951e](https://github.com/scenario-labs/skills/commit/78c951e280c1ad78a477907d713fa378702a52f9))
+* **scenario:** stop generation on unmatched recommendations ([b3cf5a4](https://github.com/scenario-labs/skills/commit/b3cf5a41efe603f93f5307b5bb7c7dad9fcd7925))
+* **skills:** repair dead links in the Roblox expert references ([#326](https://github.com/scenario-labs/skills/issues/326)) ([26aa322](https://github.com/scenario-labs/skills/commit/26aa3223461ca8688f7e8e1abfc981ae69968787))
+
+
+### Documentation
+
+* add SUPPORT.md and the release, Scorecard and license badges ([3102ff9](https://github.com/scenario-labs/skills/commit/3102ff980b454417132d3f69f1cc04b5b330afbc))
+
+## [0.59.0](https://github.com/scenario-labs/skills/compare/skills-v0.58.0...skills-v0.59.0) (2026-10-20)
+
+
+### Features
+
+* **scenario-blender-blockout:** add cast styles for character stand-ins ([#276](https://github.com/scenario-labs/skills/issues/276)) ([4c20188](https://github.com/scenario-labs/skills/commit/4c20188bd712983070cd7dc2b5ea28e9afcb96be))
+* **scenario-blender-expert:** gate assets before export or handoff ([#269](https://github.com/scenario-labs/skills/issues/269)) ([8615d6b](https://github.com/scenario-labs/skills/commit/8615d6bd281d84af3d59b51623da6a4a5ae66701))
+* **scenario-blender-export:** export Blender assets for game engines ([#270](https://github.com/scenario-labs/skills/issues/270)) ([020ff0b](https://github.com/scenario-labs/skills/commit/020ff0b51fe44455806c80997450f942e8db4c2e))
+* **scenario-blender-rigging:** add ARKit and viseme shape-key sets ([#271](https://github.com/scenario-labs/skills/issues/271)) ([054cf6e](https://github.com/scenario-labs/skills/commit/054cf6e4862a0274cf50f35bf6d92189d641e789))
+* **scenario-team-admin:** create, update, and delete projects ([#268](https://github.com/scenario-labs/skills/issues/268)) ([cf206e6](https://github.com/scenario-labs/skills/commit/cf206e66f9273c72dc5960069d5cca8280f38599))
+* **scenario-video-color-grade:** grade footage with code-written LUTs ([#277](https://github.com/scenario-labs/skills/issues/277)) ([f0adb5b](https://github.com/scenario-labs/skills/commit/f0adb5b5ebc1fc8f7e333554d2aeb767c5558d6b))
+* **skills:** add Roblox Studio expert tools ([#274](https://github.com/scenario-labs/skills/issues/274)) ([7d0a5d1](https://github.com/scenario-labs/skills/commit/7d0a5d1d413c3666327820d716a57788dbb5e5de))
+
+
+### Bug Fixes
+
+* **scenario-3d:** map multi-view side images from the subject's own left ([#266](https://github.com/scenario-labs/skills/issues/266)) ([0dc56b4](https://github.com/scenario-labs/skills/commit/0dc56b47be182f9e991e902d7c4f0d715132f584))
+* **scenario-3d:** price a 3D batch from one real concept ([#267](https://github.com/scenario-labs/skills/issues/267)) ([dd507b9](https://github.com/scenario-labs/skills/commit/dd507b95a5d0ba59b0e47624496e7f73240d4469))
+* **scenario-3d:** show creature concepts side-on and trim the body ([#280](https://github.com/scenario-labs/skills/issues/280)) ([8112eef](https://github.com/scenario-labs/skills/commit/8112eefea2c34bd4afc5cdacd77daad60d0e4775))
+* **scenario:** copy a private asset from another project with asset_copy ([#265](https://github.com/scenario-labs/skills/issues/265)) ([47d0795](https://github.com/scenario-labs/skills/commit/47d079566b1e87ae249a57f2b105af6100ef93d1))
+* **scenario:** stop a batch at the Relax-mode "wait N seconds" 429 ([#264](https://github.com/scenario-labs/skills/issues/264)) ([2068423](https://github.com/scenario-labs/skills/commit/2068423c01f14d507ed7f81ebd9d945daf1db444))
+* **scenario:** tighten the skill body and keep asset_copy to one team ([#279](https://github.com/scenario-labs/skills/issues/279)) ([c64908a](https://github.com/scenario-labs/skills/commit/c64908adb3e9bcc3989c3bd786c0436930d57e7c))
+
+
+### Documentation
+
+* **docs:** name the scenario-3d creature batch as a known test case ([#290](https://github.com/scenario-labs/skills/issues/290)) ([d4b07c0](https://github.com/scenario-labs/skills/commit/d4b07c032a8f30f965a2986f6b01187637f18710))
+
+## [0.58.0](https://github.com/scenario-labs/skills/compare/skills-v0.57.0...skills-v0.58.0) (2026-10-17)
+
+
+### Features
+
+* **scenario-blender-blockout:** add blockouts for render-to-real video ([#243](https://github.com/scenario-labs/skills/issues/243)) ([7c1a414](https://github.com/scenario-labs/skills/commit/7c1a41405ff8985d7b707fccd6a85620cf6e0543))
+* **scenario-blender-expert:** teach the Scenario Blender Plugin bridge ([#240](https://github.com/scenario-labs/skills/issues/240)) ([c94fc7d](https://github.com/scenario-labs/skills/commit/c94fc7d37a787dc189d453af2b3d21620fb2ebb0))
+* **scenario-reel-recast:** recast a trend reel with your character ([#245](https://github.com/scenario-labs/skills/issues/245)) ([08d5969](https://github.com/scenario-labs/skills/commit/08d59697af012a2f41600aba80d8dcf49a535c68))
+
+
+### Bug Fixes
+
+* **scenario-patina-retexture:** restore the frame rate xfade needs on ffmpeg 7 ([#262](https://github.com/scenario-labs/skills/issues/262)) ([1aaa21e](https://github.com/scenario-labs/skills/commit/1aaa21e00ad4e2031b99fecbdb96569730251c65))
+* **scenario-seedance:** point to draft mode and the drafts skill ([#253](https://github.com/scenario-labs/skills/issues/253)) ([aa4fa1b](https://github.com/scenario-labs/skills/commit/aa4fa1bb22ed46c9fbce8704659f64a7a52d4c8a))
+* **skills:** drop references to an unpublished Blender blockout skill ([#241](https://github.com/scenario-labs/skills/issues/241)) ([236fc59](https://github.com/scenario-labs/skills/commit/236fc59d4cfeaca6abd2e79161ae9a4b44d74fe0))
+
+## [0.57.0](https://github.com/scenario-labs/skills/compare/skills-v0.56.0...skills-v0.57.0) (2026-10-17)
+
+
+### Features
+
+* **scenario-blender-2d-animation:** animate platformer shots in Blender ([#238](https://github.com/scenario-labs/skills/issues/238)) ([dc592af](https://github.com/scenario-labs/skills/commit/dc592af7139ffacfe8fdae7dc7efa80f4dd09be3))
+* **scenario-blender:** add the Blender extension skill ([#236](https://github.com/scenario-labs/skills/issues/236)) ([ac81a88](https://github.com/scenario-labs/skills/commit/ac81a88a3e3e325cd34a54937b13e63d03a92314))
+* **scenario-seedance-drafts:** draft cheap takes, review them, complete only the picks ([#244](https://github.com/scenario-labs/skills/issues/244)) ([cd3834f](https://github.com/scenario-labs/skills/commit/cd3834f01932831e0cce414640960603adbd6d37))
+
+
+### Bug Fixes
+
+* **scenario-blender-2d-animation:** tile wide layers without a hard seam ([#248](https://github.com/scenario-labs/skills/issues/248)) ([a840a81](https://github.com/scenario-labs/skills/commit/a840a81e62594cbdebbb6cf4d406211764d93d1b))
+* **scenario-blender:** keep wait_for_job inside the 60-second client limit ([#250](https://github.com/scenario-labs/skills/issues/250)) ([d76be40](https://github.com/scenario-labs/skills/commit/d76be40ffa531da5d29087de902e8afa195878de)), closes [#249](https://github.com/scenario-labs/skills/issues/249)
+* **scenario:** give Team and Enterprise their own custom connector route ([#233](https://github.com/scenario-labs/skills/issues/233)) ([907764d](https://github.com/scenario-labs/skills/commit/907764d4490920a913b60947f9b673359b7a002e))
+* **skills:** save audio downloads under the format Scenario returns ([#234](https://github.com/scenario-labs/skills/issues/234)) ([49ed910](https://github.com/scenario-labs/skills/commit/49ed910541b9ea56da4e8ef5e2df93fa905f7cb7))
+
+
+### Documentation
+
+* gather role and goal installs in INSTALL.md with one --skill each ([#239](https://github.com/scenario-labs/skills/issues/239)) ([39f39d3](https://github.com/scenario-labs/skills/commit/39f39d37865782ccb2b8d6b8820ee2a26d1bde75))
+
+## [0.56.0](https://github.com/scenario-labs/skills/compare/skills-v0.55.0...skills-v0.56.0) (2026-10-14)
+
+
+### Features
+
+* **scenario-3d:** teach the mesh edit on the LLM-based 3D members ([#222](https://github.com/scenario-labs/skills/issues/222)) ([36b0445](https://github.com/scenario-labs/skills/commit/36b04459dc4dc53f9757beaef63ab770a8228af1))
+* **skills:** move UGC and fan-cam video into Socials ([#208](https://github.com/scenario-labs/skills/issues/208)) ([9dd33ec](https://github.com/scenario-labs/skills/commit/9dd33ec6b29afd837fc9fcbebc33b18c84d5b210))
+
+
+### Bug Fixes
+
+* **ci:** keep the commit hook's git variables away from uv's git commands ([#232](https://github.com/scenario-labs/skills/issues/232)) ([a7e3f2b](https://github.com/scenario-labs/skills/commit/a7e3f2bfb0aa26556ac13fd770d6eb940aff1a2f))
+* **scenario-chatgpt-pet-create:** refuse pet ids that leave the package or pets folder ([#209](https://github.com/scenario-labs/skills/issues/209)) ([343d66a](https://github.com/scenario-labs/skills/commit/343d66aec9b98ebefad9f2722751546861e6b60a))
+* **scenario-game-assets:** settle transparency before generating the potion set ([#219](https://github.com/scenario-labs/skills/issues/219)) ([a600293](https://github.com/scenario-labs/skills/commit/a600293862f20055b7df79a3484e6b4bd5c61105))
+* **scenario-godot-expert:** run the Godot toolkit on Windows ([#223](https://github.com/scenario-labs/skills/issues/223)) ([4e21e92](https://github.com/scenario-labs/skills/commit/4e21e92862e43870662e6b37083f3323daa697ee))
+* **scenario-godot-performance-export:** run the Android helpers on Windows and Linux ([#228](https://github.com/scenario-labs/skills/issues/228)) ([9172ac2](https://github.com/scenario-labs/skills/commit/9172ac29a7bb543a1b51a8fa7970ea404932ba37))
+* **scenario:** keep a catalog tool's dry_run inside parameters ([#218](https://github.com/scenario-labs/skills/issues/218)) ([bb1f758](https://github.com/scenario-labs/skills/commit/bb1f758fcc9a508ee456d87d382df6cbad3ba132))
+* **scenario:** name the Enterprise custom role that can also add custom connectors ([#229](https://github.com/scenario-labs/skills/issues/229)) ([f58d0cb](https://github.com/scenario-labs/skills/commit/f58d0cb46d16b249f945e5758796734299bed0ba))
+* **scenario:** name the organization-owner gate on Team and Enterprise custom connectors ([#217](https://github.com/scenario-labs/skills/issues/217)) ([a8b4077](https://github.com/scenario-labs/skills/commit/a8b40770c180c181a2bbb755b96fc8f802dfa07c))
+* **scenario:** point custom connector setup at Customize, Connectors, Add ([#231](https://github.com/scenario-labs/skills/issues/231)) ([7d32a6d](https://github.com/scenario-labs/skills/commit/7d32a6ded6a3930c278376a32c821e84ffc74db1))
+* **scenario:** say asset_download converts meshes too ([#227](https://github.com/scenario-labs/skills/issues/227)) ([15e621d](https://github.com/scenario-labs/skills/commit/15e621df3f63046f2d5fd2d48863a954121ae857))
+* **scenario:** say which catalog inputs nearly every tool declares ([#225](https://github.com/scenario-labs/skills/issues/225)) ([0d85b4c](https://github.com/scenario-labs/skills/commit/0d85b4c681fc1aaf6e6feb6e801b88de84e79994))
+* **scenario:** set up Claude apps through one connector, add Codex ([#213](https://github.com/scenario-labs/skills/issues/213)) ([12aacdd](https://github.com/scenario-labs/skills/commit/12aacdd49c69f84bef3dd9be0cd1aff6c661a52a))
+* **skills:** discover analysis executor permissions at runtime ([#214](https://github.com/scenario-labs/skills/issues/214)) ([d64e363](https://github.com/scenario-labs/skills/commit/d64e363dd994bcb2f6110e048f22d61c8ab6cb5c))
+* **skills:** file a collection in one call, since filed ids are skipped ([#221](https://github.com/scenario-labs/skills/issues/221)) ([0b5fa62](https://github.com/scenario-labs/skills/commit/0b5fa62b833b327e091f7f3d6df372c201f927b3))
+
+
+### Documentation
+
+* **skills:** say the CLI cannot install a picker group by name ([#220](https://github.com/scenario-labs/skills/issues/220)) ([8246faa](https://github.com/scenario-labs/skills/commit/8246faab0247a2f3314bce92c9b92cef4148454e)), closes [#192](https://github.com/scenario-labs/skills/issues/192)
+
 ## [0.55.0](https://github.com/scenario-labs/skills/compare/skills-v0.54.0...skills-v0.55.0) (2026-10-11)
 
 

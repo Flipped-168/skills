@@ -1,0 +1,60 @@
+name: Roblox toolkit
+
+# Runs tests/scenario-roblox-expert with Lune and Rojo installed. Without them the Lune
+# kit tests and the Rojo build checks skip, so the CI workflow's script-tests job never
+# runs them. Studio is not needed: AgentKit modules run under fake engine services, and
+# places are built with Rojo and read back with Lune.
+on:
+  pull_request:
+    paths:
+      - "skills/game-engines/roblox/*/scripts/**"
+      - "tests/scenario-roblox-expert/**"
+      - ".github/workflows/roblox.yml"
+  push:
+    branches: [main]
+    paths:
+      - "skills/game-engines/roblox/*/scripts/**"
+      - "tests/scenario-roblox-expert/**"
+      - ".github/workflows/roblox.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  toolkit:
+    name: Lune and Rojo on Linux
+    runs-on: ubuntu-latest
+    env:
+      # The versions scenario-roblox-tooling pins; bump them with the skills.
+      LUNE_VERSION: 0.11.0
+      LUNE_SHA256: 5a0ea32c3e13e5e3b1dc415c2056bcfe44258b3a811dcd473c50e3b437d10f72
+      ROJO_VERSION: 7.7.1
+      ROJO_SHA256: 00feb4fa0829a1dd72b49df2639da519a352bfe13cadcd83969e2ba2bb5693c4
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install Lune and Rojo
+        run: |
+          bin="$RUNNER_TEMP/bin"
+          mkdir -p "$bin"
+          fetch() { # name, release URL, sha256
+            curl -fsSL -o "$1.zip" "$2"
+            echo "$3  $1.zip" | sha256sum -c -
+            unzip -o -q "$1.zip" -d "$bin"
+          }
+          fetch lune "https://github.com/lune-org/lune/releases/download/v${LUNE_VERSION}/lune-${LUNE_VERSION}-linux-x86_64.zip" "$LUNE_SHA256"
+          fetch rojo "https://github.com/rojo-rbx/rojo/releases/download/v${ROJO_VERSION}/rojo-${ROJO_VERSION}-linux-x86_64.zip" "$ROJO_SHA256"
+          chmod +x "$bin/lune" "$bin/rojo"
+          echo "$bin" >> "$GITHUB_PATH"
+          "$bin/lune" --version && "$bin/rojo" --version
+      - name: Toolkit tests
+        run: |
+          set -o pipefail
+          python -B -m unittest discover -s tests/scenario-roblox-expert -v 2>&1 | tee tests.log
+          # A Lune or Rojo suite that skips here means a tool did not install: fail instead.
+          if grep -qE "skipped 'needs (lune|rojo)" tests.log; then exit 1; fi

@@ -13,10 +13,13 @@
 //   so renames and removals cannot leave stale rows behind
 // - every row carries a non-empty "Use it for" description
 // - every `npx skills add scenario-labs/skills` command, in README.md,
-//   INSTALL.md, and the expert-tools family READMEs, names only existing skills; the default
+//   INSTALL.md, and the expert-tools family READMEs, passes its names after one
+//   --skill and names only existing skills; the default
 //   command (the line after "# Every Scenario skill, without the expert tools")
 //   lists exactly the core skills, and each family README's command lists
 //   exactly its family, so a new skill cannot be left out of them
+// - every core skill appears in at least one INSTALL.md role command, and
+//   each role's and goal's "N skills." count matches its command
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -196,8 +199,18 @@ for (const { name, dir } of skills) {
 // skill added later would silently fall out of the all-in-one commands.
 const DEFAULT_MARKER = "# Every Scenario skill, without the expert tools";
 const installPattern = /^npx skills add scenario-labs\/skills\b(.*)$/;
-const skillsIn = (line) =>
-  [...line.matchAll(/--skill\s+(\S+)/g)].map((match) => match[1]);
+// The CLI's --skill (-s) takes every argument up to the next flag, which is how
+// the commands here pass all their names after a single --skill.
+const skillsIn = (line) => {
+  const names = [];
+  let inSkills = false;
+  for (const token of line.split(/\s+/)) {
+    if (token === "--skill" || token === "-s") inSkills = true;
+    else if (token.startsWith("-")) inSkills = false;
+    else if (inSkills) names.push(token);
+  }
+  return names;
+};
 const compareSets = (label, listed, expected) => {
   const missing = expected.filter((name) => !listed.includes(name));
   const extra = listed.filter((name) => !expected.includes(name));
@@ -213,6 +226,13 @@ const installCommands = (file, text) => {
     const line = raw.trim();
     if (!installPattern.test(line)) return;
     const names = skillsIn(line);
+    if (
+      line.split(/\s+/).filter((t) => t === "--skill" || t === "-s").length > 1
+    ) {
+      errors.push(
+        `${file}:${index + 1}: install command repeats --skill (pass every name after one --skill)`,
+      );
+    }
     for (const name of names) {
       if (name !== "*" && !dirOf.has(name)) {
         errors.push(
@@ -240,8 +260,60 @@ if (defaults.length !== 1) {
   );
 }
 
-if (existsSync("INSTALL.md")) {
-  installCommands("INSTALL.md", readFileSync("INSTALL.md", "utf8"));
+// Until the skills CLI can install a group from the command line
+// (https://github.com/scenario-labs/skills/issues/192), the INSTALL.md
+// commands are the only scripted installs of a curated set. Roles ("## By
+// role") are the complete taxonomy, so every core skill must land in one of
+// them; goals ("## By goal") are shortcuts and need not cover everything. Each
+// role's and goal's "N skills." line must count its command.
+if (!existsSync("INSTALL.md")) {
+  errors.push("INSTALL.md: missing (it holds one install command per role)");
+} else {
+  const install = readFileSync("INSTALL.md", "utf8");
+  installCommands("INSTALL.md", install);
+  const inRoles = new Set();
+  let part = null;
+  let entry = null;
+  let stated = null;
+  let previous = "";
+  for (const raw of install.split("\n")) {
+    const line = raw.trim();
+    const heading = line.match(/^(##|###) (.+)$/);
+    if (heading) {
+      if (heading[1] === "##") part = heading[2];
+      entry = heading[2];
+      stated = null;
+      previous = "";
+      continue;
+    }
+    // Wrapped prose can put the number at the end of one line and "skills."
+    // at the start of the next.
+    const count = `${previous} ${line}`.match(/\b(\d+) skills\.$/);
+    previous = line;
+    if (count) stated = Number(count[1]);
+    if (!installPattern.test(line)) continue;
+    const names = new Set(skillsIn(line));
+    if (part === "By role") for (const name of names) inRoles.add(name);
+    if (stated === null) {
+      errors.push(
+        `INSTALL.md: "${entry}" has no "N skills." line before its command`,
+      );
+    } else if (stated !== names.size) {
+      errors.push(
+        `INSTALL.md: "${entry}" says ${stated} skills, its command installs ${names.size}`,
+      );
+    }
+  }
+  if (inRoles.size === 0) {
+    errors.push('INSTALL.md: no install command under "## By role"');
+  }
+  for (const { name, dir } of skills.filter((skill) => !skill.expert)) {
+    if (!inRoles.has(name)) {
+      errors.push(
+        `${dir}: in no INSTALL.md role command (add it, and the siblings it names, to the role it serves; required until #192 ships group installs)`,
+      );
+    }
+  }
 }
 
 const families = new Map();
