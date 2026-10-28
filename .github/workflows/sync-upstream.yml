@@ -1,0 +1,41 @@
+name: Sync scenario-labs/skills
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Add scenario-labs/skills
+        run: git remote add scenario-labs/skills https://github.com/scenario-labs/skills.git || true
+      - name: Fetch scenario-labs/skills
+        run: git fetch scenario-labs/skills
+      - name: Merge scenario-labs/skills (ours strategy)
+        run: |
+          git merge scenario-labs/skills/HEAD --no-edit -X ours || git merge FETCH_HEAD --no-edit -X ours || true
+          git diff --name-only --diff-filter=U | while IFS= read -r f; do
+            case "$f" in
+              .github/workflows/sync-scenario-labs/skills.yml) ;;
+              .github/workflows/*) git rm -f "$f" ;;
+              *) git checkout --ours -- "$f" || true ;;
+            esac
+          done
+      - name: Keep only our workflow
+        run: |
+          mkdir -p .github/workflows
+          find .github/workflows -type f ! -name "sync-scenario-labs/skills.yml" -delete
+      - name: Commit and push
+        run: |
+          git add -f .github/workflows
+          git commit -m "chore: preserve fork sync workflow" --allow-empty
+          git push
